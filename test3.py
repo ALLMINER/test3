@@ -26,8 +26,7 @@ mycursor.execute("CREATE DATABASE IF NOT EXISTS  testrt")
 mycursor.execute("CREATE USER IF NOT EXISTS  'test'@'localhost' IDENTIFIED BY 'test'")
 mycursor.execute("GRANT INSERT,SELECT,UPDATE ON testrt.* to 'test'@'localhost'")
 mycursor.execute("CREATE TABLE `testrt`.`customers` (`customer_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, `customer_name` VARCHAR(30) NOT NULL)")
-mycursor.execute("CREATE TABLE `testrt`.`orders` (`order_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY Key, `order_name` VARCHAR(50) NOT NULL, `customer_id` INT UNSIGNED NOT NULL,
-FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON UPDATE CASCADE ON DELETE RESTRICT)")
+mycursor.execute("CREATE TABLE `testrt`.`orders` (`order_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY Key, `order_name` VARCHAR(50) NOT NULL, `customer_id` INT UNSIGNED NOT NULL, FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON UPDATE CASCADE ON DELETE RESTRICT)")
 
 sql = "INSERT INTO testrt.customers (customer_name) VALUES (%s),(%s)"
 val= ("joe"),("smith")
