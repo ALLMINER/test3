@@ -1,5 +1,5 @@
 test in vutr ububntu 18.04.5 new instace
-
+1
 login root 
 run commands 
 
